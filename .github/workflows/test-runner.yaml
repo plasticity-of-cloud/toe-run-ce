@@ -8,3 +8,5 @@ jobs:
           echo "Running on ARC runner!"
           hostname
           df -h
+          printenv | grep -i MV
+
