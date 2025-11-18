@@ -2,9 +2,10 @@ name: Test ARC
 on: workflow_dispatch
 jobs:
   test:
-    runs-on: self-hosted
+    runs-on: toe-runner-set
     steps:
       - run: |
           echo "Running on ARC runner!"
           hostname
           df -h
+          echo "Node: $(kubectl get node $(hostname) -o wide 2>/dev/null || echo 'N/A')"
