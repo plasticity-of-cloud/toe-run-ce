@@ -1,0 +1,10 @@
+name: Test ARC
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - run: |
+          echo "Running on ARC runner!"
+          hostname
+          df -h
