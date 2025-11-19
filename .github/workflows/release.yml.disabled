@@ -15,7 +15,7 @@ env:
 
 jobs:
   prepare:
-    runs-on: ubuntu-latest
+    runs-on: toe-runner-set
     outputs:
       go-version: ${{ steps.go-version.outputs.version }}
       release-version: ${{ steps.release-version.outputs.version }}
@@ -263,7 +263,7 @@ jobs:
   create-manifests-and-release:
     needs: [prepare, build-and-release, build-arm64]
     if: always() && (needs.build-and-release.result == 'success')
-    runs-on: ubuntu-latest
+    runs-on: toe-runner-set
     permissions:
       contents: write
       packages: write
